@@ -1,0 +1,144 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Itens</title>
+    <link rel="stylesheet" href="{%static 'livros/css/lista.css' %}">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Header Superior -->
+        <header class="top-header">
+            <div class="header-left">
+                <button class="menu-toggle">☰</button>
+                <h1 class="logo">Sistema de Catálogo</h1>
+            </div>
+            <div class="header-right">
+                <div class="user-info">
+                    <span class="user-name">Usuário</span>
+                    <div class="user-avatar">👤</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Menu Lateral -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="{% url 'home' %}" class="nav-item">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="#" class="nav-item active">
+                    <span class="nav-icon">📋</span>
+                    <span class="nav-text">Lista de Itens</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">➕</span>
+                    <span class="nav-text">Adicionar Novo</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Relatórios</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-text">Configurações</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <div class="content-header">
+                <div class="breadcrumb">
+                    <a href="{% url 'home' %}">Início</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Lista de Itens</span>
+                </div>
+                <h2 class="page-title">Lista de Itens</h2>
+            </div>
+
+            <div class="list-controls">
+                <div class="search-box-container">
+                    <input type="text" class="search-box" placeholder="🔍 Buscar itens...">
+                </div>
+                <button class="btn btn-primary btn-add">
+                    <span class="btn-icon">➕</span>
+                    Adicionar Novo
+                </button>
+            </div>
+
+            <div class="items-container">
+                <!-- Os alunos devem usar um loop para exibir os itens aqui -->
+                <!-- Exemplo de estrutura de um item: -->
+                <div class="item-card">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-title">Harry Potter</h3>
+                            <span class="item-badge">Ficção</span>
+                        </div>
+                        <p class="item-description">livro do bruxinho sapeca</p>
+                        <div class="item-meta">
+                            <span class="meta-item">📅 Data</span>
+                            <span class="meta-item">👤 JK Roulling</span>
+                        </div>
+                    </div>
+                    <div class="item-actions">
+                        <a href="{% url 'livros:detalhes' %}" class="btn-action btn-view" title="Ver detalhes">
+                            <span>👁️</span>
+                        </a>
+                        <a href="#" class="btn-action btn-edit" title="Editar">
+                            <span>✏️</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-title">Harry Potter, o mau contra ataca</h3>
+                            <span class="item-badge">Ficção</span>
+                        </div>
+                        <p class="item-description">livro do bruxinho sapeca contra as forças do mau</p>
+                        <div class="item-meta">
+                            <span class="meta-item">📅 Data</span>
+                            <span class="meta-item">👤 JK Roulling</span>
+                        </div>
+                    </div>
+                    <div class="item-actions">
+                        <a href="{% url 'livros:detalhes' %}" class="btn-action btn-view" title="Ver detalhes">
+                            <span>👁️</span>
+                        </a>
+                        <a href="#" class="btn-action btn-edit" title="Editar">
+                            <span>✏️</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-title">Harry Potter, eles nunca cançam</h3>
+                            <span class="item-badge">Documentario</span>
+                        </div>
+                        <p class="item-description">livro do bruxinho sapeca dessa vez em carros velozes e com the rock</p>
+                        <div class="item-meta">
+                            <span class="meta-item">📅 Data</span>
+                            <span class="meta-item">👤 JK Roulling</span>
+                        </div>
+                    </div>
+                    <div class="item-actions">
+                        <a href="{% url 'livros:detalhes' %}" class="btn-action btn-view" title="Ver detalhes">
+                            <span>👁️</span>
+                        </a>
+                        <a href="#" class="btn-action btn-edit" title="Editar">
+                            <span>✏️</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Mais itens devem ser gerados dinamicamente com loop -->
+            </div>
+        </main>
+    </div>
+</body>
+</html>
